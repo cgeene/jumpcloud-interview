@@ -1,4 +1,8 @@
 # .flake8
 [flake8]
-select = C,E,F,W
+select = BLK,C,I,E,F,W
+application-import-names = flaskr,tests
+import-order-style = google
+ignore = E203,W503
+max-line-length = 88
 max-complexity = 10

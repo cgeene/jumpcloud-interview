@@ -1,5 +1,5 @@
-import requests
 from flask import current_app
+import requests
 
 
 def generic_request(request, method, path, kwargs):

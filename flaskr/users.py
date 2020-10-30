@@ -1,16 +1,17 @@
 from flask import Blueprint, request
+
 from flaskr.db import (
     create_user as db_create_user,
-    update_user as db_update_user,
     delete_user as db_delete_user,
+    update_user as db_update_user,
 )
 from flaskr.jumpcloud import (
-    get_users,
     create_user,
+    delete_user,
     get_user_by_id,
     get_user_count,
+    get_users,
     update_user,
-    delete_user,
 )
 
 bp = Blueprint("users", __name__)
