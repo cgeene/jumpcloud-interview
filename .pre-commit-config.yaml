@@ -13,3 +13,4 @@ repos:
         entry: nox -rs lint
         language: system
         types: [python]
+        verbose: true
