@@ -18,7 +18,9 @@ def create_app(test_config=None):
     db.init_app(app)
 
     from . import users
+    from . import health
 
     app.register_blueprint(users.bp)
+    app.register_blueprint(health.bp)
 
     return app
