@@ -1,9 +1,6 @@
 import os
 
 from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
-
-db = SQLAlchemy()
 
 
 def create_app(test_config=None):
@@ -14,10 +11,12 @@ def create_app(test_config=None):
     elif 'CONFIG_FILEPATH' in os.environ: 
         app.config.from_envvar('CONFIG_FILEPATH')
     else: 
-        app.config.from_pyfile('../config/dev_config.py')
+        raise Error('Must provied a value for CONFIG_FILEPATH')
+    
+    from . import db
+    db.init_app(app)
 
-    @app.route('/hello')
-    def hello():
-        return 'Hello, World!'
+    from . import users
+    app.register_blueprint(users.bp)
 
-    return app
+    return app 
