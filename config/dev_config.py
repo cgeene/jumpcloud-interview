@@ -1,6 +1,0 @@
-DATABASE_NAME = 'jumpcloud'
-DATABASE_HOST = 'localhost'
-DATABASE_PORT = '5432'
-DATABASE_USER = 'jumpcloud'
-DATABASE_PASSWORD = 'jumpcloud'
-JUMPCLOUD_BASE_URL = 'https://console.jumpcloud.com/api'

@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres
+    environment:
+      - POSTGRES_DB=jumpcloud
+      - POSTGRES_USER=jumpcloud
+      - POSTGRES_PASSWORD=jumpcloud
+      - POSTGRES_HOST_AUTH_METHOD=trust
+  jumpcloud:
+    build:
+      context: .
+      dockerfile: docker/dev.Dockerfile
+    image: jumpcloud:latest
+    environment:
+      CONFIG_FILEPATH: /app/config/dev_config.json
+      FLASK_APP: /app/flaskr
+    volumes:
+      - .:/app
+    depends_on:
+      - postgres
+    ports:
+      - "5000:5000"

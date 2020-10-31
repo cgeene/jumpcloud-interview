@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "{{ include "jumpcloud.fullname" . }}-test-connection"
+  labels:
+    {{- include "jumpcloud.labels" . | nindent 4 }}
+  annotations:
+    "helm.sh/hook": test
+spec:
+  containers:
+    - name: wget
+      image: busybox
+      command: ['wget']
+      args: ['{{ include "jumpcloud.fullname" . }}:{{ .Values.service.port }}']
+  restartPolicy: Never

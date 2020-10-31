@@ -5,3 +5,4 @@ flake8==3.8.4
 autopep8==1.5.4
 nox==2020.8.22
 pre-commit==2.8.1
+waitress==1.4.4
