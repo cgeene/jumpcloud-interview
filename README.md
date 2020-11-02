@@ -54,7 +54,7 @@ curl --location --request GET 'localhost:5000/users' \
 --header 'x-api-key: {api-key}'
 ```
 
-#### GET /users/<id>
+#### GET /users/:id
 ```bash
 curl --location --request GET 'localhost:8080/users/<id>' \
 --header 'Accept: application/json' \
@@ -78,7 +78,7 @@ curl --location --request POST 'localhost:8080/users' \
 }'
 ```
 
-#### PUT /users/<id>
+#### PUT /users/:id
 ```bash
 curl --location --request PUT 'localhost:8080/users/<id>' \
 --header 'Accept: application/json' \
@@ -94,7 +94,7 @@ curl --location --request PUT 'localhost:8080/users/<id>' \
 }'
 ```
 
-#### DELETE /users/<id>
+#### DELETE /users/:id
 ```bash
 curl --location --request DELETE 'localhost:8080/users/<id>' \
 --header 'Accept: application/json' \
