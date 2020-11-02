@@ -43,3 +43,69 @@ flask run
 make initdb
 make buildup
 ```
+
+## APIs 
+
+#### GET /users
+```bash
+curl --location --request GET 'localhost:5000/users' \
+--header 'Accept: application/json' \
+--header 'Content-Type: application/json' \
+--header 'x-api-key: {api-key}'
+```
+
+#### GET /users/<id>
+```bash
+curl --location --request GET 'localhost:8080/users/<id>' \
+--header 'Accept: application/json' \
+--header 'Content-Type: application/json' \
+--header 'x-api-key: {api-key}' \
+```
+
+#### POST /users
+```bash
+curl --location --request POST 'localhost:8080/users' \
+--header 'Accept: application/json' \
+--header 'Content-Type: application/json' \
+--header 'x-api-key: {api-key}' \
+--data-raw '{
+    "description": "Test user 2",
+    "displayname": "Test Person",
+    "email": "test.person@gmail.com",
+    "firstname": "test",
+    "lastname": "person",
+    "username": "tperson"
+}'
+```
+
+#### PUT /users/<id>
+```bash
+curl --location --request PUT 'localhost:8080/users/<id>' \
+--header 'Accept: application/json' \
+--header 'Content-Type: application/json' \
+--header 'x-api-key: {api-key}' \
+--data-raw '{
+    "description": "Test user 2",
+    "displayname": "Test Person",
+    "email": "test.person@gmail.com",
+    "firstname": "test",
+    "lastname": "person",
+    "username": "tperson"
+}'
+```
+
+#### DELETE /users/<id>
+```bash
+curl --location --request DELETE 'localhost:8080/users/<id>' \
+--header 'Accept: application/json' \
+--header 'Content-Type: application/json' \
+--header 'x-api-key: {api-key}' \
+```
+
+#### GET /users/count
+```bash
+curl --location --request GET 'localhost:8080/users/count' \
+--header 'Accept: application/json' \
+--header 'Content-Type: application/json' \
+--header 'x-api-key: {api-key}' \
+```
